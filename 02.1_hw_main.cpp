@@ -1,3 +1,4 @@
+// Група ПД221. Микола Марців. Завдання 1
 #include <iostream>
 #include <string>
 
