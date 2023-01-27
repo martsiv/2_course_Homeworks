@@ -12,11 +12,11 @@ private:
 	enum { Empty = -1 };
 
 	T* data;
-	const int size;
+	const int maxSize;
 	int top;
 
 public:
-	explicit Stack(int size) : size(size)
+	explicit Stack(int size) : maxSize(size)
 	{
 		data = new T[size] {};
 		top = Empty; // no elements
@@ -34,7 +34,7 @@ public:
 	void Clear() { top = Empty; }
 
 	bool IsEmpty() const { return top == Empty; }
-	bool IsFull() const { return top == size - 1; }
+	bool IsFull() const { return top == maxSize - 1; }
 
 	Stack& operator=(const Stack& stk);
 };
@@ -52,10 +52,10 @@ inline Stack<T>::Stack(const std::initializer_list<T>& list) : Stack<T>::Stack(l
 }
 
 template <typename T>
-Stack<T>::Stack(const Stack& that) : size(that.size), top(that.top)
+Stack<T>::Stack(const Stack& that) : maxSize(that.maxSize), top(that.top)
 {
-	data = new T[size]{};
-	for (int i = 0; i < size; ++i)
+	data = new T[maxSize]{};
+	for (int i = 0; i < maxSize; ++i)
 		this->data[i] = that.data[i];
 }
 template <typename T>
@@ -88,9 +88,9 @@ Stack<T>& Stack<T>::operator=(const Stack& stk)
 {
 	T tmp;
 	int i = 0;
-	for (; i < this->size; i++)
+	for (; i < this->maxSize; i++)
 	{
-		if (i < stk.size)
+		if (i < stk.maxSize)
 			tmp = stk.data[i];
 		else
 		{
