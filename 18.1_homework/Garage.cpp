@@ -62,9 +62,9 @@ void Garage::FindCar(string carNumber)
 	cars.Get(carNumber)->Show();
 }
 
-bool Garage::RemoveCar(string number)
+void Garage::RemoveCar(string number)
 {
-	return false;
+	cars.Delete(number);
 }
 
 bool Garage::SortUP()

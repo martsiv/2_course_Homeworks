@@ -62,13 +62,10 @@ public:
 	{
 		--size;
 		Node* newArr = new Node[size];
-		for (int i = 0, j = 0; i < size + 1; i++)
+		for (size_t i = 0; i < size + 1; i++)
 		{
 			if (data[i].key != key)
-			{
-				newArr[j] = data[i];
-				++j;
-			}
+				newArr[i] = data[i];
 		}
 		delete[] data;
 		data = newArr;
@@ -101,7 +98,7 @@ public:
 			}
 		}
 	}
-	void Sort(std::function<bool(TValue, TValue)> fnc)
+	void Sort(std::function<bool(TValue, TValue)> fcn)
 	{
 		bool swapped;
 		int counter = 0;
@@ -110,7 +107,7 @@ public:
 			swapped = 0;
 			for (int j = 0; j < size - 1 - counter; j++)
 			{
-				if (fnc(data[j + 1].value, data[j].value))
+				if (fcn(data[j + 1].value, data[j].value))
 				{
 					swapped = 1;
 					Node tmp = data[j];

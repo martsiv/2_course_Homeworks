@@ -17,7 +17,7 @@ public:
 	void AddCar(Car* car);
 	bool ChangeParameters(string carNumber);
 	void FindCar(string carNumber);
-	bool RemoveCar(string number);
+	void RemoveCar(string number);
 	bool SortUP();
 	bool SortDown();
 };
