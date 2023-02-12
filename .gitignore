@@ -361,11 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/06_homework/06_homework.vcxproj.filters
-/06_homework/06_homework.vcxproj
-/06_homework/06_hw_main.cpp
-/08_homework/08_homework.vcxproj.filters
-/08_homework/08_homework.vcxproj
-/08_homework/08_hw_main.cpp
-/08_homework/08_hw_main.cpp
-/08_homework/08_hw_main.cpp
+
